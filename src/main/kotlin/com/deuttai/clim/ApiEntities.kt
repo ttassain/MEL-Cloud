@@ -88,8 +88,8 @@ data class DeviceStatus(
     @JsonProperty("LastCommunication") val lastCommunication: Date,
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
     @JsonProperty("NextCommunication") val nextCommunication: Date,
-    @JsonProperty("SetTemperature") var desiredTemperature: Double,
-    @JsonProperty("SetFanSpeed") var fanSpeed: Int,
+    @JsonProperty("SetTemperature") var setTemperature: Double,
+    @JsonProperty("SetFanSpeed") var setFanSpeed: Int,
     @JsonProperty("VaneHorizontal") var vaneHorizontal: Int,
     @JsonProperty("VaneVertical") var vaneVertical: Int,
     @JsonProperty("NumberOfFanSpeeds") val numberOfFanSpeeds: Int,

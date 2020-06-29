@@ -21,12 +21,12 @@ interface MelCloudApi {
         @Param("contextKey") contextKey: String
     ): List<BuildingInfos>
 
-    @RequestLine("GET /Mitsubishi.Wifi.Client/Device/Get?id={id}&buildingID={buildingID}")
+    @RequestLine("GET /Mitsubishi.Wifi.Client/Device/Get?id={id}&buildingID={buildingId}")
     @Headers("Content-Type: application/json", "Accept: application/json", "X-MitsContextKey: {contextKey}")
     fun getDeviceStatus(
         @Param("contextKey") contextKey: String,
         @Param("id") deviceId: Int,
-        @Param("buildingID") buildingID: Int
+        @Param("buildingId") buildingId: Int
     ): DeviceStatus
 
     @RequestLine("POST/Mitsubishi.Wifi.Client/Device/SetAta")
