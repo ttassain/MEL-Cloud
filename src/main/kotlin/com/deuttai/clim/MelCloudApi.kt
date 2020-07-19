@@ -12,8 +12,11 @@ interface MelCloudApi {
         loginDetails: LoginDetails
     ): LoginInfos
 
-    // TODO login auto a tester
-    // Mitsubishi.Wifi.Client/Login/ClientSavedLogin/?key=XXXXX&appVersion=XXXXX
+    // TODO : login auto a tester
+    // /Mitsubishi.Wifi.Client/Login/ClientSavedLogin/?key=XXXXX&appVersion=XXXXX
+
+    // TODO : requete pour un DeviceType = 1
+    // /Mitsubishi.Wifi.Client/Device/SetAtw
 
     @RequestLine("GET /Mitsubishi.Wifi.Client/User/ListDevices")
     @Headers("Content-Type: application/json", "Accept: application/json", "X-MitsContextKey: {contextKey}")

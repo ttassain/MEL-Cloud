@@ -71,10 +71,12 @@ data class PermissionsInfo(
 )
 
 /**
+ * @param deviceType Type de device 0=air/air 1=air/eau
  * @param fanSpeed Vitesse du ventilateur de 1 à [numberOfFanSpeeds] (0 = automatique)
  */
 data class DeviceStatus(
     @JsonProperty("DeviceID") val deviceId: Int,
+    @JsonProperty("DeviceType") val deviceType: Int,
     @JsonProperty("EffectiveFlags") var effectiveFlags: Int,
     @JsonProperty("Power") var power: Boolean,
     @JsonProperty("Offline") val offline: Boolean,
@@ -109,6 +111,35 @@ enum class OperationMode {
 
     @JsonValue
     fun toValue() = ordinal
+}
+
+enum class Language(val code: Int, val country: String) {
+    EN(0, "English"),
+    BG(1, "Bulgarian"),
+    CS(2, "Czech"),
+    DA(3, "Danish"),
+    DE(4, "German"),
+    ET(5, "Estonian"),
+    ES(6, "Spanish"),
+    FR(7, "French"),
+    HY(8, "Armenian"),
+    LV(9, "Latvian"),
+    LT(10, "Lithuanian"),
+    HU(11, "Hungarian"),
+    NL(12, "Dutch"),
+    NO(13, "Norwegian"),
+    PL(14, "Polish"),
+    PT(15, "Portuguese"),
+    RU(16, "Russian"),
+    FI(17, "Finnish"),
+    SV(18, "Swedish"),
+    IT(19, "Italian"),
+    UK(20, "Ukrainian"),
+    TR(21, "Turkish"),
+    EL(22, "Greek"),
+    HR(23, "Croatian"),
+    RO(24, "Romanian"),
+    SL(25, "Slovenian")
 }
 
 object EffectiveFlag {

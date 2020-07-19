@@ -30,8 +30,10 @@ class MelCloudDemo {
 
                     // On allume la clim du Bureau !!
                     // Si plusieurs paramètres modifiés en même temps, il faut ajouter les flags : exemple si on allume et change la vitesse des ventilateurs : EffectiveFlag.POWER + EffectiveFlag.FAN_SPEED
-                    deviceStatus.effectiveFlags = EffectiveFlag.POWER
+                    deviceStatus.effectiveFlags = EffectiveFlag.DESIRED_TEMPERATURE + EffectiveFlag.POWER + EffectiveFlag.OPERATION_MODE
                     deviceStatus.power = true
+                    deviceStatus.operationMode = OperationMode.COOLING
+                    deviceStatus.setTemperature = 23.0
                     deviceStatus.hasPendingCommand = true
                     melCloudApi.setDeviceStatus(contextKey, deviceStatus)
                 }
@@ -51,10 +53,10 @@ class MelCloudDemo {
     private fun login() {
         val loginDetails = LoginDetails(
             appVersion = "1.20.0.5",
-            language = 7,
+            language = Language.FR.code,
             persist = true,
-            email = "votreemail@orange.fr",
-            password = "Mon2Pass"
+            email = "mon.email@orange.fr",
+            password = "Password"
         )
 
         val loginInfos = melCloudApi.login(loginDetails)
